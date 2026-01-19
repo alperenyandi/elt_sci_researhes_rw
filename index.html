@@ -3,32 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Öğrenci Dönüt Dosyası İndirme</title>
-  <link rel="stylesheet" href="assets/style.css" />
+  <title>Öğrenci Dönüt Dosyası</title>
+
+  <!-- DİKKAT: dosya yolunu kendi yapınıza göre doğru seçin -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-
 <body>
-  <main class="wrap">
-    <header class="card header">
-      <div class="brand">
-        <img class="icon" src="assets/icons/research.svg" alt="" aria-hidden="true" />
-        <div>
-          <h1>Öğrenci Dönüt Dosyası</h1>
-          <p class="muted">
-            Öğrenci numaranızı girin ve dönüt PDF’inizi indirin.
-          </p>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div class="brand">
+          <img class="icon" src="assets/icons/elt-research-methods.svg" alt="" aria-hidden="true" />
+          <div>
+            <h1>Öğrenci Dönüt Dosyası</h1>
+            <p class="subtitle">Öğrenci numaranızı girin ve dönüt PDF’inizi indirin.</p>
+          </div>
         </div>
+        <div class="badge">ELT • Bilimsel Araştırma Yöntemleri</div>
       </div>
-    </header>
 
-    <section class="card">
-      <h2>İndirme</h2>
+      <div class="section-title">İndirme</div>
 
       <form id="downloadForm" class="form" autocomplete="off">
-        <label for="studentId">Öğrenci Numarası</label>
+        <div>
+          <div class="label">Öğrenci Numarası</div>
+        </div>
+
         <div class="row">
           <input
             id="studentId"
+            class="input"
             name="studentId"
             inputmode="numeric"
             placeholder="Örn: 2515911006"
@@ -37,33 +41,31 @@
             pattern="[0-9]{10}"
             required
           />
-          <button type="submit">PDF’i indir</button>
+          <button class="btn" type="submit">PDF’i indir</button>
         </div>
 
         <p class="hint">
-          Numara yalnızca rakamlardan oluşmalıdır. Dosya otomatik olarak indirilecektir.
+          Numara yalnızca rakamlardan oluşmalıdır. Doğru numara girildiğinde dosya otomatik olarak indirilecektir.
         </p>
 
         <div id="status" class="status" role="status" aria-live="polite"></div>
       </form>
 
-      <hr class="sep" />
+      <hr class="hr" />
 
-      <details class="info">
+      <details class="details">
         <summary>Bilgilendirme</summary>
         <ul>
-          <li>Bu sayfa yalnızca indirme kolaylığı sağlar; “şifreli sistem” değildir.</li>
-          <li>Numaranız doğruysa PDF otomatik iner. Hata alırsanız öğretim elemanınıza bildirin.</li>
-          <li>PDF görüntülenmezse indirilenler klasörünüzü kontrol edin.</li>
+          <li>Dosyanız açılmazsa “İndirilenler” klasörünü kontrol edin.</li>
+          <li>Numaranız doğru olduğu hâlde indirme yoksa tarayıcı engellerini kontrol edin.</li>
+          <li>Bu sayfa erişimi kolaylaştırır; ileri düzey kimlik doğrulama içermez.</li>
         </ul>
       </details>
-    </section>
+    </div>
 
-    <footer class="muted footer">
-      © Dönüt Paylaşım Sayfası
-    </footer>
-  </main>
+    <div class="footer">© Dönüt Paylaşım Sayfası</div>
+  </div>
 
-  <script src="assets/app.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
